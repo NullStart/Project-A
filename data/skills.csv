@@ -1,0 +1,13 @@
+id,name,description,effect_type,target_type,power,cooldown,cast_time,mp_cost
+1,Power Strike,Deals 150% attack damage.,damage,enemy,1.50,5.00,0,5
+2,Whirlwind,Deals 100% attack damage to all enemies.,damage,all_enemies,1.00,10.00,0,10
+3,Second Wind,Restores 25% of maximum HP.,heal,self,0.25,20.00,0,10
+4,Fireball,Deals 200% attack damage.,damage,enemy,2.00,5.00,1.00,10
+5,Arcane Explosion,Deals 150% attack damage to all enemies.,damage,all_enemies,1.50,12.00,1.50,25
+6,Meditation,Restores 20% of maximum MP.,restore_mp,self,0.20,20.00,0,0
+7,Quick Stab,Deals 130% attack damage.,damage,enemy,1.30,3.00,0,4
+8,Assassinate,Deals 250% attack damage.,damage,enemy,2.50,10.00,0,12
+9,Blade Storm,Deals 120% attack damage to all enemies.,damage,all_enemies,1.20,12.00,0,15
+101,Heavy Strike,A powerful monster attack.,damage,enemy,1.50,8.00,0,5
+102,Dark Bolt,A concentrated magical attack.,damage,enemy,2.00,6.00,1.00,15
+103,Dragon Breath,A devastating dragon attack.,damage,enemy,2.50,12.00,2.00,30

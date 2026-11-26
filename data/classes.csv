@@ -1,0 +1,4 @@
+id,name,description,base_hp,base_mp,base_attack,base_defense,base_speed,base_crit_rate,base_crit_damage,hp_growth,mp_growth,attack_growth,defense_growth,speed_growth
+1,Warrior,A durable melee fighter.,150,40,18,12,20,0.05,1.50,15,4,3,3,0
+2,Mage,A powerful spellcaster.,80,120,25,5,15,0.05,1.50,8,12,5,1,0
+3,Rogue,A fast and precise attacker.,100,60,15,7,30,0.15,1.75,10,6,3,2,0
