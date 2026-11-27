@@ -1,8 +1,14 @@
+-- project-A v0.1.0
+-- this is a database structure for the idle adventure game
+-- stores accounts, characters, game data, and adventure progress
+
 CREATE DATABASE IF NOT EXISTS project_demo;
 
 USE project_demo;
 
 -- 01 users
+-- Stores user accounts and login information
+-- login_token is used to control active login sessions
 
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -14,6 +20,8 @@ CREATE TABLE users (
 ) AUTO_INCREMENT = 10000;
 
 -- 02 classes
+-- Stores character classes and their starting stats
+-- _growth values determine stat increases when leveling up
 
 CREATE TABLE classes (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -50,6 +58,8 @@ CREATE TABLE classes (
 );
 
 -- 03 characters
+-- Store the player's character and their current progress
+-- 
 
 CREATE TABLE characters (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -78,6 +88,10 @@ CREATE TABLE characters (
 );
 
 -- 04 items
+-- Stores item definitions, prices, and stat bonuses
+-- Type 1: Equipment
+-- Type 2: Consumable
+-- Type 3: Material
 
 CREATE TABLE items (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -113,6 +127,8 @@ CREATE TABLE items (
 );
 
 -- 05 inventory_stacks
+-- It is used to store the stackable items owned by each character
+-- The same items will be stored together in quantity form
 
 CREATE TABLE inventory_stacks (
     character_id INT NOT NULL,
@@ -129,6 +145,8 @@ CREATE TABLE inventory_stacks (
 );
 
 -- 06 equipment_instances
+-- Each equipment instance has its own level of enhancement
+-- NULL equipped_slot means unequipped
 
 CREATE TABLE equipment_instances (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
@@ -149,6 +167,7 @@ CREATE TABLE equipment_instances (
 );
 
 -- 07 zones
+-- encounter size and waiting time
 
 CREATE TABLE zones (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -169,7 +188,8 @@ CREATE TABLE zones (
 );
 
 -- 08 monsters
-
+-- Stores monster stats and basic battle rewards
+-- The gold reward is randomly selected within the range of gold_min and gold_max
 CREATE TABLE monsters (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL UNIQUE,
@@ -205,6 +225,8 @@ CREATE TABLE monsters (
 );
 
 -- 09 zone_monsters
+-- available monsters in each zone
+-- higher spawn weight means higher spawn chance
 
 CREATE TABLE zone_monsters (
     zone_id INT NOT NULL,
@@ -221,6 +243,9 @@ CREATE TABLE zone_monsters (
 );
 
 -- 10 monster_drops
+-- Define the items that monsters can drop
+-- The drop probability range is from 0 to 1
+
 
 CREATE TABLE monster_drops (
     monster_id INT NOT NULL,
@@ -242,6 +267,7 @@ CREATE TABLE monster_drops (
 );
 
 -- 11 skills
+-- Store the effect, power, cooldown time, casting time and mana consumption of the skill
 
 CREATE TABLE skills (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -265,6 +291,7 @@ CREATE TABLE skills (
 );
 
 -- 12 class_skills
+-- Defines the skills available to each character class and the level required to unlock them
 
 CREATE TABLE class_skills (
     class_id INT NOT NULL,
@@ -281,6 +308,7 @@ CREATE TABLE class_skills (
 );
 
 -- 13 monster_skills
+-- Defines the skills available to each monster.
 
 CREATE TABLE monster_skills (
     monster_id INT NOT NULL,
@@ -297,6 +325,10 @@ CREATE TABLE monster_skills (
 );
 
 -- 14 adventure_state
+-- Store the current progress of the adventure and battles
+-- The timestamp is used to calculate the elapsed time of the adventure
+-- state_data is stored in JSON format to hold the complete simulation state
+-- States: idle, active, or dead
 
 CREATE TABLE adventure_state (
     character_id INT PRIMARY KEY,

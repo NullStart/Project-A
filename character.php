@@ -1,4 +1,8 @@
 <?php
+/**
+ * displays characters owned by the current user.
+ * select a character, create a new character or log out.
+ */
 
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/auth.php';
@@ -6,9 +10,6 @@ require_once __DIR__ . '/includes/auth.php';
 requireLogin($conn);
 
 $user_id = getUserId();
-
-
-//Get characters
 
 $sql = "SELECT c.id, c.name, c.level, c.exp,
                c.gold, c.current_hp, c.current_mp,

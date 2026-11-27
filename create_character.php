@@ -1,12 +1,13 @@
 <?php
+/**
+ * displays the character creation form and available classes.
+ * loads class descriptions and base stats from the database
+ */
 
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/auth.php';
 
 requireLogin($conn);
-
-
-// Get classes
 
 $sql = "SELECT id, name, description,
                base_hp, base_mp, base_attack,

@@ -1,4 +1,9 @@
 <?php
+/**
+ * handles account registration and input validation.
+ * checks for duplicate accounts and stores passwords securely
+ * using password hashing.
+ */
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: register.html');
@@ -14,12 +19,12 @@ $confirm_password = $_POST['confirm_password'] ?? '';
 
 $errors = [];
 
-//Input validation
+//input validation
 
 if (strlen($username) < 3 || strlen($username) > 50) {
     $errors[] = 'Username must be between 3 and 50 characters.';
 }
-
+// allow only letters, numbers, and underscores use regular expression
 if (!preg_match('/^[a-zA-Z0-9_]+$/', $username)) {
     $errors[] = 'Username can only contain letters, numbers and underscores.';
 }
@@ -27,16 +32,14 @@ if (!preg_match('/^[a-zA-Z0-9_]+$/', $username)) {
 if (!$email || strlen($email) > 255) {
     $errors[] = 'Invalid email address.';
 }
-
+// bcrypt password limit of 72 bytes
 if (strlen($password) < 8 || strlen($password) > 72) {
-    $errors[] = 'Password must be between 8 and 72 bytes.';
+    $errors[] = 'Password must be between 8 and 72 character.';
 }
 
 if ($password !== $confirm_password) {
     $errors[] = 'Passwords do not match.';
 }
-
-//check validation errors
 
 if (count($errors) > 0) {
 
@@ -52,8 +55,6 @@ if (count($errors) > 0) {
 
     exit();
 }
-
-//check existing account
 
 $sql = "SELECT id
         FROM users
@@ -84,8 +85,6 @@ mysqli_stmt_close($stmt);
 
 $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-// Insert account
-
 $sql = "INSERT INTO users (username, email, password_hash)
         VALUES (?, ?, ?)";
 
@@ -114,8 +113,6 @@ try {
     mysqli_close($conn);
     exit();
 }
-
-//Redirect to login
 
 mysqli_close($conn);
 
