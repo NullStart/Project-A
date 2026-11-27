@@ -12,6 +12,7 @@
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/simulation/controller.php';
+require_once __DIR__ . '/includes/assets.php';
 
 requireLogin($conn);
 
@@ -167,17 +168,19 @@ $csrf_token = $_SESSION['csrf_token'];
         <?php if ($state['battle'] !== null) { ?>
 
             <?php foreach ($state['battle']['enemies'] as $enemy) { ?>
+                <div>
+                    <img src="<?php echo htmlspecialchars(getAssetImage('monsters', $enemy['sprite'] ?? null)); ?>"
+                        alt="<?php echo htmlspecialchars($enemy['name']); ?>"
+                        width="80">
+                    <p>
+                        <?php echo htmlspecialchars($enemy['name']); ?>
+                        #<?php echo $enemy['instance_id']; ?>
 
-                <p>
-                    <?php echo htmlspecialchars($enemy['name']); ?>
-                    #<?php echo $enemy['instance_id']; ?>
-
-                    HP: <?php echo $enemy['current_hp']; ?>
-                    / <?php echo $enemy['max_hp']; ?>
-                </p>
-
-            <?php } ?>
-
+                        HP: <?php echo $enemy['current_hp']; ?>
+                        / <?php echo $enemy['max_hp']; ?>
+                    </p>
+                </div>
+                <?php } ?>
         <?php } else { ?>
 
             <p>Waiting for next encounter.</p>

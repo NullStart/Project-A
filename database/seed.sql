@@ -16,35 +16,35 @@ VALUES
 
 -- 02 items
 
-INSERT INTO `items` (`id`, `name`, `description`, `type_id`, `required_level`, `buy_price`, `sell_price`, `equip_slot`, `bonus_hp`, `bonus_mp`, `bonus_attack`, `bonus_defense`, `bonus_speed`, `bonus_crit_rate`, `bonus_crit_damage`)
+INSERT INTO `items` (`id`, `name`, `description`, `icon`, `type_id`, `required_level`, `buy_price`, `sell_price`, `equip_slot`, `bonus_hp`, `bonus_mp`, `bonus_attack`, `bonus_defense`, `bonus_speed`, `bonus_crit_rate`, `bonus_crit_damage`)
 VALUES
-(1001, 'Wooden Sword', 'A basic training sword.', 1, 1, 50, 20, 'weapon', 0, 0, 5, 0, 0, 0, 0),
-(1002, 'Iron Sword', 'A reliable iron sword.', 1, 5, 250, 100, 'weapon', 0, 0, 12, 0, 0, 0, 0),
-(1003, 'Steel Sword', 'A well-crafted steel sword.', 1, 10, 800, 320, 'weapon', 0, 0, 25, 0, 0, 0, 0),
-(1004, 'Wooden Staff', 'A basic magical staff.', 1, 1, 50, 20, 'weapon', 0, 10, 5, 0, 0, 0, 0),
-(1005, 'Crystal Staff', 'A staff containing magical crystals.', 1, 10, 800, 320, 'weapon', 0, 30, 28, 0, 0, 0, 0),
-(1006, 'Iron Dagger', 'A lightweight dagger.', 1, 1, 50, 20, 'weapon', 0, 0, 4, 0, 3, 0.02, 0),
-(1007, 'Shadow Dagger', 'A dagger designed for critical attacks.', 1, 10, 800, 320, 'weapon', 0, 0, 20, 0, 5, 0.05, 0.10),
-(1101, 'Cloth Armor', 'Simple protective clothing.', 1, 1, 60, 24, 'armor', 10, 0, 0, 3, 0, 0, 0),
-(1102, 'Leather Armor', 'Lightweight leather protection.', 1, 5, 200, 80, 'armor', 20, 0, 0, 8, 2, 0, 0),
-(1103, 'Iron Armor', 'Heavy iron protection.', 1, 10, 600, 240, 'armor', 40, 0, 0, 18, 0, 0, 0),
-(1201, 'Leather Boots', 'Basic adventuring boots.', 1, 1, 80, 32, 'boots', 0, 0, 0, 2, 2, 0, 0),
-(1202, 'Swift Boots', 'Boots that improve movement speed.', 1, 10, 500, 200, 'boots', 0, 0, 0, 4, 6, 0, 0),
-(1301, 'Iron Ring', 'A ring that increases attack.', 1, 5, 200, 80, 'ring', 0, 0, 5, 0, 0, 0, 0),
-(1302, 'Ruby Ring', 'A ring containing a red gemstone.', 1, 10, 600, 240, 'ring', 20, 0, 8, 0, 0, 0.03, 0),
-(1303, 'Sapphire Ring', 'A ring containing a blue gemstone.', 1, 10, 600, 240, 'ring', 0, 30, 8, 0, 0, 0, 0),
-(2001, 'Health Potion', 'Restores 50 HP.', 2, 1, 20, 8, NULL, 0, 0, 0, 0, 0, 0, 0),
-(2002, 'Mana Potion', 'Restores 30 MP.', 2, 1, 20, 8, NULL, 0, 0, 0, 0, 0, 0, 0),
-(2003, 'Greater Health Potion', 'Restores 200 HP.', 2, 10, 80, 32, NULL, 0, 0, 0, 0, 0, 0, 0),
-(2004, 'Greater Mana Potion', 'Restores 100 MP.', 2, 10, 80, 32, NULL, 0, 0, 0, 0, 0, 0, 0),
-(3001, 'Slime Gel', 'A sticky monster material.', 3, 1, 0, 2, NULL, 0, 0, 0, 0, 0, 0, 0),
-(3002, 'Animal Fur', 'Fur collected from wild animals.', 3, 1, 0, 4, NULL, 0, 0, 0, 0, 0, 0, 0),
-(3003, 'Wolf Fang', 'A sharp wolf fang.', 3, 1, 0, 10, NULL, 0, 0, 0, 0, 0, 0, 0),
-(3004, 'Spider Silk', 'Silk collected from giant spiders.', 3, 1, 0, 12, NULL, 0, 0, 0, 0, 0, 0, 0),
-(3005, 'Bone Fragment', 'A fragment of an undead creature.', 3, 1, 0, 15, NULL, 0, 0, 0, 0, 0, 0, 0),
-(3006, 'Iron Ore', 'A piece of unprocessed iron.', 3, 1, 0, 20, NULL, 0, 0, 0, 0, 0, 0, 0),
-(3007, 'Magic Crystal', 'A crystal containing magical energy.', 3, 1, 0, 50, NULL, 0, 0, 0, 0, 0, 0, 0),
-(3008, 'Dragon Scale', 'A rare scale from an ancient dragon.', 3, 1, 0, 250, NULL, 0, 0, 0, 0, 0, 0, 0);
+(1001, 'Wooden Sword', 'A basic training sword.', NULL, 1, 1, 50, 20, 'weapon', 0, 0, 5, 0, 0, 0, 0),
+(1002, 'Iron Sword', 'A reliable iron sword.', NULL, 1, 5, 250, 100, 'weapon', 0, 0, 12, 0, 0, 0, 0),
+(1003, 'Steel Sword', 'A well-crafted steel sword.', NULL, 1, 10, 800, 320, 'weapon', 0, 0, 25, 0, 0, 0, 0),
+(1004, 'Wooden Staff', 'A basic magical staff.', NULL, 1, 1, 50, 20, 'weapon', 0, 10, 5, 0, 0, 0, 0),
+(1005, 'Crystal Staff', 'A staff containing magical crystals.', NULL, 1, 10, 800, 320, 'weapon', 0, 30, 28, 0, 0, 0, 0),
+(1006, 'Iron Dagger', 'A lightweight dagger.', NULL, 1, 1, 50, 20, 'weapon', 0, 0, 4, 0, 3, 0.02, 0),
+(1007, 'Shadow Dagger', 'A dagger designed for critical attacks.', NULL, 1, 10, 800, 320, 'weapon', 0, 0, 20, 0, 5, 0.05, 0.10),
+(1101, 'Cloth Armor', 'Simple protective clothing.', NULL, 1, 1, 60, 24, 'armor', 10, 0, 0, 3, 0, 0, 0),
+(1102, 'Leather Armor', 'Lightweight leather protection.', NULL, 1, 5, 200, 80, 'armor', 20, 0, 0, 8, 2, 0, 0),
+(1103, 'Iron Armor', 'Heavy iron protection.', NULL, 1, 10, 600, 240, 'armor', 40, 0, 0, 18, 0, 0, 0),
+(1201, 'Leather Boots', 'Basic adventuring boots.', NULL, 1, 1, 80, 32, 'boots', 0, 0, 0, 2, 2, 0, 0),
+(1202, 'Swift Boots', 'Boots that improve movement speed.', NULL, 1, 10, 500, 200, 'boots', 0, 0, 0, 4, 6, 0, 0),
+(1301, 'Iron Ring', 'A ring that increases attack.', NULL, 1, 5, 200, 80, 'ring', 0, 0, 5, 0, 0, 0, 0),
+(1302, 'Ruby Ring', 'A ring containing a red gemstone.', NULL, 1, 10, 600, 240, 'ring', 20, 0, 8, 0, 0, 0.03, 0),
+(1303, 'Sapphire Ring', 'A ring containing a blue gemstone.', NULL, 1, 10, 600, 240, 'ring', 0, 30, 8, 0, 0, 0, 0),
+(2001, 'Red Potion', 'Restores 50 HP.', 'Red_Potion', 2, 1, 20, 8, NULL, 0, 0, 0, 0, 0, 0, 0),
+(2002, 'Blue Potion', 'Restores 30 MP.', 'Blue_Potion', 2, 1, 20, 8, NULL, 0, 0, 0, 0, 0, 0, 0),
+(2003, 'Greater Health Potion', 'Restores 200 HP.', NULL, 2, 10, 80, 32, NULL, 0, 0, 0, 0, 0, 0, 0),
+(2004, 'Greater Mana Potion', 'Restores 100 MP.', NULL, 2, 10, 80, 32, NULL, 0, 0, 0, 0, 0, 0, 0),
+(3001, 'Slime Gel', 'A sticky monster material.', NULL, 3, 1, 0, 2, NULL, 0, 0, 0, 0, 0, 0, 0),
+(3002, 'Animal Fur', 'Fur collected from wild animals.', NULL, 3, 1, 0, 4, NULL, 0, 0, 0, 0, 0, 0, 0),
+(3003, 'Wolf Fang', 'A sharp wolf fang.', NULL, 3, 1, 0, 10, NULL, 0, 0, 0, 0, 0, 0, 0),
+(3004, 'Spider Silk', 'Silk collected from giant spiders.', NULL, 3, 1, 0, 12, NULL, 0, 0, 0, 0, 0, 0, 0),
+(3005, 'Bone Fragment', 'A fragment of an undead creature.', NULL, 3, 1, 0, 15, NULL, 0, 0, 0, 0, 0, 0, 0),
+(3006, 'Iron Ore', 'A piece of unprocessed iron.', NULL, 3, 1, 0, 20, NULL, 0, 0, 0, 0, 0, 0, 0),
+(3007, 'Magic Crystal', 'A crystal containing magical energy.', NULL, 3, 1, 0, 50, NULL, 0, 0, 0, 0, 0, 0, 0),
+(3008, 'Dragon Scale', 'A rare scale from an ancient dragon.', NULL, 3, 1, 0, 250, NULL, 0, 0, 0, 0, 0, 0, 0);
 
 -- 03 zones
 
@@ -58,20 +58,20 @@ VALUES
 
 -- 04 monsters
 
-INSERT INTO `monsters` (`id`, `name`, `description`, `level`, `max_hp`, `max_mp`, `attack`, `defense`, `speed`, `crit_rate`, `crit_damage`, `exp_reward`, `gold_min`, `gold_max`)
+INSERT INTO `monsters` (`id`, `name`, `description`, `sprite`, `level`, `max_hp`, `max_mp`, `attack`, `defense`, `speed`, `crit_rate`, `crit_damage`, `exp_reward`, `gold_min`, `gold_max`)
 VALUES
-(1, 'Slime', 'A weak gelatinous creature.', 1, 25, 0, 5, 1, 10, 0, 1.50, 8, 1, 3),
-(2, 'Wild Rat', 'A small and aggressive rat.', 2, 30, 0, 7, 2, 18, 0.02, 1.50, 10, 2, 4),
-(3, 'Wild Rabbit', 'A surprisingly aggressive rabbit.', 3, 35, 0, 8, 2, 22, 0.03, 1.50, 12, 2, 5),
-(4, 'Wolf', 'A fast forest predator.', 5, 80, 0, 18, 6, 25, 0.05, 1.50, 30, 8, 15),
-(5, 'Goblin', 'A small humanoid monster.', 6, 100, 20, 20, 8, 18, 0.05, 1.50, 35, 10, 18),
-(6, 'Giant Spider', 'A dangerous forest spider.', 8, 120, 20, 24, 8, 20, 0.05, 1.50, 45, 12, 22),
-(7, 'Cave Bat', 'A fast creature living underground.', 10, 150, 0, 32, 10, 30, 0.08, 1.50, 60, 18, 30),
-(8, 'Skeleton', 'An undead skeletal warrior.', 12, 200, 0, 40, 18, 15, 0.05, 1.50, 80, 25, 40),
-(9, 'Stone Golem', 'A heavily armored stone creature.', 15, 400, 0, 50, 35, 8, 0.02, 1.50, 120, 35, 60),
-(10, 'Undead Knight', 'An ancient undead warrior.', 20, 650, 50, 75, 45, 20, 0.08, 1.75, 200, 60, 100),
-(11, 'Dark Mage', 'A corrupted magical creature.', 22, 450, 200, 100, 20, 22, 0.10, 1.75, 230, 70, 120),
-(12, 'Ancient Dragon', 'A legendary and powerful dragon.', 30, 5000, 500, 180, 80, 25, 0.15, 2.00, 2000, 500, 1000);
+(1, 'Slime', 'A weak gelatinous creature.', 'Snail', 1, 25, 0, 5, 1, 10, 0, 1.50, 8, 1, 3),
+(2, 'Wild Rat', 'A small and aggressive rat.', NULL, 2, 30, 0, 7, 2, 18, 0.02, 1.50, 10, 2, 4),
+(3, 'Wild Rabbit', 'A surprisingly aggressive rabbit.', NULL, 3, 35, 0, 8, 2, 22, 0.03, 1.50, 12, 2, 5),
+(4, 'Wolf', 'A fast forest predator.', NULL, 5, 80, 0, 18, 6, 25, 0.05, 1.50, 30, 8, 15),
+(5, 'Goblin', 'A small humanoid monster.', NULL, 6, 100, 20, 20, 8, 18, 0.05, 1.50, 35, 10, 18),
+(6, 'Giant Spider', 'A dangerous forest spider.', NULL, 8, 120, 20, 24, 8, 20, 0.05, 1.50, 45, 12, 22),
+(7, 'Cave Bat', 'A fast creature living underground.', NULL, 10, 150, 0, 32, 10, 30, 0.08, 1.50, 60, 18, 30),
+(8, 'Skeleton', 'An undead skeletal warrior.', NULL, 12, 200, 0, 40, 18, 15, 0.05, 1.50, 80, 25, 40),
+(9, 'Stone Golem', 'A heavily armored stone creature.', NULL, 15, 400, 0, 50, 35, 8, 0.02, 1.50, 120, 35, 60),
+(10, 'Undead Knight', 'An ancient undead warrior.', NULL, 20, 650, 50, 75, 45, 20, 0.08, 1.75, 200, 60, 100),
+(11, 'Dark Mage', 'A corrupted magical creature.', NULL, 22, 450, 200, 100, 20, 22, 0.10, 1.75, 230, 70, 120),
+(12, 'Ancient Dragon', 'A legendary and powerful dragon.', NULL, 30, 5000, 500, 180, 80, 25, 0.15, 2.00, 2000, 500, 1000);
 
 -- 05 zone_monsters
 
@@ -133,20 +133,20 @@ VALUES
 
 -- 07 skills
 
-INSERT INTO `skills` (`id`, `name`, `description`, `effect_type`, `target_type`, `power`, `cooldown`, `cast_time`, `mp_cost`)
+INSERT INTO `skills` (`id`, `name`, `description`, `icon`, `effect_type`, `target_type`, `power`, `cooldown`, `cast_time`, `mp_cost`)
 VALUES
-(1, 'Power Strike', 'Deals 150% attack damage.', 'damage', 'enemy', 1.50, 5.00, 0, 5),
-(2, 'Whirlwind', 'Deals 100% attack damage to all enemies.', 'damage', 'all_enemies', 1.00, 10.00, 0, 10),
-(3, 'Second Wind', 'Restores 25% of maximum HP.', 'heal', 'self', 0.25, 20.00, 0, 10),
-(4, 'Fireball', 'Deals 200% attack damage.', 'damage', 'enemy', 2.00, 5.00, 1.00, 10),
-(5, 'Arcane Explosion', 'Deals 150% attack damage to all enemies.', 'damage', 'all_enemies', 1.50, 12.00, 1.50, 25),
-(6, 'Meditation', 'Restores 20% of maximum MP.', 'restore_mp', 'self', 0.20, 20.00, 0, 0),
-(7, 'Quick Stab', 'Deals 130% attack damage.', 'damage', 'enemy', 1.30, 3.00, 0, 4),
-(8, 'Assassinate', 'Deals 250% attack damage.', 'damage', 'enemy', 2.50, 10.00, 0, 12),
-(9, 'Blade Storm', 'Deals 120% attack damage to all enemies.', 'damage', 'all_enemies', 1.20, 12.00, 0, 15),
-(101, 'Heavy Strike', 'A powerful monster attack.', 'damage', 'enemy', 1.50, 8.00, 0, 5),
-(102, 'Dark Bolt', 'A concentrated magical attack.', 'damage', 'enemy', 2.00, 6.00, 1.00, 15),
-(103, 'Dragon Breath', 'A devastating dragon attack.', 'damage', 'enemy', 2.50, 12.00, 2.00, 30);
+(1, 'Power Strike', 'Deals 150% attack damage.', NULL, 'damage', 'enemy', 1.50, 5.00, 0, 5),
+(2, 'Whirlwind', 'Deals 100% attack damage to all enemies.', NULL, 'damage', 'all_enemies', 1.00, 10.00, 0, 10),
+(3, 'Second Wind', 'Restores 25% of maximum HP.', NULL, 'heal', 'self', 0.25, 20.00, 0, 10),
+(4, 'Fireball', 'Deals 200% attack damage.', NULL, 'damage', 'enemy', 2.00, 5.00, 1.00, 10),
+(5, 'Arcane Explosion', 'Deals 150% attack damage to all enemies.', NULL, 'damage', 'all_enemies', 1.50, 12.00, 1.50, 25),
+(6, 'Meditation', 'Restores 20% of maximum MP.', NULL, 'restore_mp', 'self', 0.20, 20.00, 0, 0),
+(7, 'Quick Stab', 'Deals 130% attack damage.', NULL, 'damage', 'enemy', 1.30, 3.00, 0, 4),
+(8, 'Assassinate', 'Deals 250% attack damage.', NULL, 'damage', 'enemy', 2.50, 10.00, 0, 12),
+(9, 'Blade Storm', 'Deals 120% attack damage to all enemies.', NULL, 'damage', 'all_enemies', 1.20, 12.00, 0, 15),
+(101, 'Heavy Strike', 'A powerful monster attack.', NULL, 'damage', 'enemy', 1.50, 8.00, 0, 5),
+(102, 'Dark Bolt', 'A concentrated magical attack.', NULL, 'damage', 'enemy', 2.00, 6.00, 1.00, 15),
+(103, 'Dragon Breath', 'A devastating dragon attack.', NULL, 'damage', 'enemy', 2.50, 12.00, 2.00, 30);
 
 -- 08 class_skills
 

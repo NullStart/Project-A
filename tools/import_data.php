@@ -29,12 +29,16 @@ $text_columns = [
     'description',
     'equip_slot',
     'effect_type',
-    'target_type'
+    'target_type',
+    'icon',
+    'sprite'
 ];
 
 $nullable_columns = [
     'description',
-    'equip_slot'
+    'equip_slot',
+    'icon',
+    'sprite'
 ];
 
 

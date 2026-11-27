@@ -97,7 +97,7 @@ CREATE TABLE items (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL UNIQUE,
     description VARCHAR(255),
-
+    image_path VARCHAR(255) DEFAULT NULL,
     type_id TINYINT NOT NULL,
     required_level INT NOT NULL DEFAULT 1,
 
@@ -173,6 +173,7 @@ CREATE TABLE zones (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL UNIQUE,
     description VARCHAR(255),
+    sprite VARCHAR(100) DEFAULT NULL,
 
     required_level INT NOT NULL DEFAULT 1,
 
@@ -273,6 +274,7 @@ CREATE TABLE skills (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL UNIQUE,
     description VARCHAR(255),
+    icon VARCHAR(100) DEFAULT NULL,
 
     effect_type VARCHAR(30) NOT NULL,
     target_type VARCHAR(30) NOT NULL,
