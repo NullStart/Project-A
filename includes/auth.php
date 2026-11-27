@@ -1,24 +1,34 @@
 <?php
-
+/**
+ * handles user authentication and session management.
+ * uses login tokens to prevent multiple active login sessions under the same account.
+ */
 require_once __DIR__ . '/db.php';
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-function isLoggedIn()
-{
+function isLoggedIn(){
     return isset($_SESSION['user_id'],
                  $_SESSION['login_token']);
 }
 
-function getUserId()
-{
+function getUserId(){
     return $_SESSION['user_id'] ?? null;
 }
 
-function loginUser($conn, $user_id, $username)
-{
+/**
+ * creates a new login session and invalidates previous sessions.
+ *
+ * @param mysqli $conn database connection
+ * @param int $user_id user ID
+ * @param string $username account username
+ * @return void
+ */
+
+function loginUser($conn, $user_id, $username){
+    // store only the token hash in the database
     $token = bin2hex(random_bytes(32));
     $token_hash = hash('sha256', $token);
 
@@ -35,6 +45,7 @@ function loginUser($conn, $user_id, $username)
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
+    // prevent session fixation
     session_regenerate_id(true);
 
     $_SESSION['user_id'] = $user_id;
@@ -42,12 +53,16 @@ function loginUser($conn, $user_id, $username)
     $_SESSION['login_token'] = $token;
 }
 
-function validateSession($conn)
-{
+/**
+ * validates the current session against the stored login token.
+ *
+ * @param mysqli $conn database connection
+ * @return bool whether the session is valid
+ */
+function validateSession($conn){
     if (!isLoggedIn()) {
         return false;
     }
-
     $user_id = getUserId();
 
     $sql = "SELECT login_token
@@ -76,9 +91,14 @@ function validateSession($conn)
         $user['login_token'], $token_hash
     );
 }
-
-function requireLogin($conn, $login_page = 'login.html')
-{
+/**
+ * restricts page access to users with valid sessions.
+ *
+ * @param mysqli $conn database connection
+ * @param string $login_page redirect destination
+ * @return void
+ */
+function requireLogin($conn, $login_page = 'login.html'){
     if (!isLoggedIn()) {
         header('Location: ' . $login_page);
         exit();
@@ -92,8 +112,7 @@ function requireLogin($conn, $login_page = 'login.html')
     }
 }
 
-function clearSession()
-{
+function clearSession(){
     $_SESSION = [];
 
     if (ini_get('session.use_cookies')) {
@@ -113,30 +132,29 @@ function clearSession()
 
     session_destroy();
 }
-
-function logoutUser($conn)
-{
+/**
+ * invalidates the current login token and clears the session.
+ *
+ * @param mysqli $conn database connection
+ * @return void
+ */
+function logoutUser($conn){
     if (isLoggedIn()) {
-
         $user_id = getUserId();
-
         $token_hash = hash(
             'sha256', $_SESSION['login_token']
         );
-
+        // prevent old sessions from invalidating newer sessions
         $sql = "UPDATE users
                 SET login_token = NULL
-                WHERE id = ? AND login_token = ?";
-
+                WHERE id = ? 
+                AND login_token = ?";
         $stmt = mysqli_prepare($conn, $sql);
-
         mysqli_stmt_bind_param(
             $stmt, "is", $user_id, $token_hash
         );
-
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
     }
-
     clearSession();
 }

@@ -1,28 +1,28 @@
-id,name,description,type_id,required_level,buy_price,sell_price,equip_slot,bonus_hp,bonus_mp,bonus_attack,bonus_defense,bonus_speed,bonus_crit_rate,bonus_crit_damage
-1001,Wooden Sword,A basic training sword.,1,1,50,20,weapon,0,0,5,0,0,0,0
-1002,Iron Sword,A reliable iron sword.,1,5,250,100,weapon,0,0,12,0,0,0,0
-1003,Steel Sword,A well-crafted steel sword.,1,10,800,320,weapon,0,0,25,0,0,0,0
-1004,Wooden Staff,A basic magical staff.,1,1,50,20,weapon,0,10,5,0,0,0,0
-1005,Crystal Staff,A staff containing magical crystals.,1,10,800,320,weapon,0,30,28,0,0,0,0
-1006,Iron Dagger,A lightweight dagger.,1,1,50,20,weapon,0,0,4,0,3,0.02,0
-1007,Shadow Dagger,A dagger designed for critical attacks.,1,10,800,320,weapon,0,0,20,0,5,0.05,0.10
-1101,Cloth Armor,Simple protective clothing.,1,1,60,24,armor,10,0,0,3,0,0,0
-1102,Leather Armor,Lightweight leather protection.,1,5,200,80,armor,20,0,0,8,2,0,0
-1103,Iron Armor,Heavy iron protection.,1,10,600,240,armor,40,0,0,18,0,0,0
-1201,Leather Boots,Basic adventuring boots.,1,1,80,32,boots,0,0,0,2,2,0,0
-1202,Swift Boots,Boots that improve movement speed.,1,10,500,200,boots,0,0,0,4,6,0,0
-1301,Iron Ring,A ring that increases attack.,1,5,200,80,ring,0,0,5,0,0,0,0
-1302,Ruby Ring,A ring containing a red gemstone.,1,10,600,240,ring,20,0,8,0,0,0.03,0
-1303,Sapphire Ring,A ring containing a blue gemstone.,1,10,600,240,ring,0,30,8,0,0,0,0
-2001,Health Potion,Restores 50 HP.,2,1,20,8,,0,0,0,0,0,0,0
-2002,Mana Potion,Restores 30 MP.,2,1,20,8,,0,0,0,0,0,0,0
-2003,Greater Health Potion,Restores 200 HP.,2,10,80,32,,0,0,0,0,0,0,0
-2004,Greater Mana Potion,Restores 100 MP.,2,10,80,32,,0,0,0,0,0,0,0
-3001,Slime Gel,A sticky monster material.,3,1,0,2,,0,0,0,0,0,0,0
-3002,Animal Fur,Fur collected from wild animals.,3,1,0,4,,0,0,0,0,0,0,0
-3003,Wolf Fang,A sharp wolf fang.,3,1,0,10,,0,0,0,0,0,0,0
-3004,Spider Silk,Silk collected from giant spiders.,3,1,0,12,,0,0,0,0,0,0,0
-3005,Bone Fragment,A fragment of an undead creature.,3,1,0,15,,0,0,0,0,0,0,0
-3006,Iron Ore,A piece of unprocessed iron.,3,1,0,20,,0,0,0,0,0,0,0
-3007,Magic Crystal,A crystal containing magical energy.,3,1,0,50,,0,0,0,0,0,0,0
-3008,Dragon Scale,A rare scale from an ancient dragon.,3,1,0,250,,0,0,0,0,0,0,0
+id,name,description,icon,type_id,required_level,buy_price,sell_price,equip_slot,bonus_hp,bonus_mp,bonus_attack,bonus_defense,bonus_speed,bonus_crit_rate,bonus_crit_damage
+1001,Wooden Sword,A basic training sword.,,1,1,50,20,weapon,0,0,5,0,0,0,0
+1002,Iron Sword,A reliable iron sword.,,1,5,250,100,weapon,0,0,12,0,0,0,0
+1003,Steel Sword,A well-crafted steel sword.,,1,10,800,320,weapon,0,0,25,0,0,0,0
+1004,Wooden Staff,A basic magical staff.,,1,1,50,20,weapon,0,10,5,0,0,0,0
+1005,Crystal Staff,A staff containing magical crystals.,,1,10,800,320,weapon,0,30,28,0,0,0,0
+1006,Iron Dagger,A lightweight dagger.,,1,1,50,20,weapon,0,0,4,0,3,0.02,0
+1007,Shadow Dagger,A dagger designed for critical attacks.,,1,10,800,320,weapon,0,0,20,0,5,0.05,0.10
+1101,Cloth Armor,Simple protective clothing.,,1,1,60,24,armor,10,0,0,3,0,0,0
+1102,Leather Armor,Lightweight leather protection.,,1,5,200,80,armor,20,0,0,8,2,0,0
+1103,Iron Armor,Heavy iron protection.,,1,10,600,240,armor,40,0,0,18,0,0,0
+1201,Leather Boots,Basic adventuring boots.,,1,1,80,32,boots,0,0,0,2,2,0,0
+1202,Swift Boots,Boots that improve movement speed.,,1,10,500,200,boots,0,0,0,4,6,0,0
+1301,Iron Ring,A ring that increases attack.,,1,5,200,80,ring,0,0,5,0,0,0,0
+1302,Ruby Ring,A ring containing a red gemstone.,,1,10,600,240,ring,20,0,8,0,0,0.03,0
+1303,Sapphire Ring,A ring containing a blue gemstone.,,1,10,600,240,ring,0,30,8,0,0,0,0
+2001,Red Potion,Restores 50 HP.,Red_Potion,2,1,20,8,,0,0,0,0,0,0,0
+2002,Blue Potion,Restores 30 MP.,Blue_Potion,2,1,20,8,,0,0,0,0,0,0,0
+2003,Greater Health Potion,Restores 200 HP.,,2,10,80,32,,0,0,0,0,0,0,0
+2004,Greater Mana Potion,Restores 100 MP.,,2,10,80,32,,0,0,0,0,0,0,0
+3001,Slime Gel,A sticky monster material.,,3,1,0,2,,0,0,0,0,0,0,0
+3002,Animal Fur,Fur collected from wild animals.,,3,1,0,4,,0,0,0,0,0,0,0
+3003,Wolf Fang,A sharp wolf fang.,,3,1,0,10,,0,0,0,0,0,0,0
+3004,Spider Silk,Silk collected from giant spiders.,,3,1,0,12,,0,0,0,0,0,0,0
+3005,Bone Fragment,A fragment of an undead creature.,,3,1,0,15,,0,0,0,0,0,0,0
+3006,Iron Ore,A piece of unprocessed iron.,,3,1,0,20,,0,0,0,0,0,0,0
+3007,Magic Crystal,A crystal containing magical energy.,,3,1,0,50,,0,0,0,0,0,0,0
+3008,Dragon Scale,A rare scale from an ancient dragon.,,3,1,0,250,,0,0,0,0,0,0,0

@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * handles character creation requests.
+ * validates character information and initializes stats based on the selected class.
+ */
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: ../create_character.php');
     exit();
@@ -11,15 +14,11 @@ require_once __DIR__ . '/../includes/auth.php';
 requireLogin($conn, '../login.html');
 
 $user_id = getUserId();
-
 $name = filter_input(INPUT_POST, 'name');
 
 $class_id = filter_input(
     INPUT_POST, 'class_id', FILTER_VALIDATE_INT
 );
-
-
-//Input
 
 $name = trim($name ?? '');
 
@@ -28,9 +27,6 @@ if (empty($name) || !$class_id) {
     echo '<a href="../create_character.php">Go Back</a>';
     exit();
 }
-
-
-//Check class
 
 $sql = "SELECT base_hp, base_mp
         FROM classes
@@ -52,8 +48,6 @@ if (!$class) {
     exit();
 }
 
-
-// Check character name
 
 $sql = "SELECT id
         FROM characters
@@ -77,20 +71,17 @@ if (mysqli_num_rows($result) > 0) {
 mysqli_stmt_close($stmt);
 
 
-// Initial attributes
-
+// start with full HP and MP
 $current_hp = $class['base_hp'];
 $current_mp = $class['base_mp'];
 
 
-//Create character
 
-$sql = "INSERT INTO characters
-            (user_id, class_id, name, current_hp, current_mp)
+// use database defaults for level, exp, and gold, so there is no need to write these attributes.
+$sql = "INSERT INTO characters(
+        user_id, class_id, name, current_hp, current_mp)
         VALUES (?, ?, ?, ?, ?)";
-
 try {
-
     $stmt = mysqli_prepare($conn, $sql);
 
     mysqli_stmt_bind_param(
@@ -106,7 +97,6 @@ try {
     mysqli_stmt_close($stmt);
 
 } catch (mysqli_sql_exception $e) {
-
     if ($e->getCode() == 1062) {
         echo '<p>Character name already exists.</p>';
     } else {
@@ -117,9 +107,6 @@ try {
     echo '<a href="../create_character.php">Go Back</a>';
     exit();
 }
-
-
-// 06 Redirect
 
 mysqli_close($conn);
 
