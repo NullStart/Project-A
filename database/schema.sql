@@ -1,4 +1,4 @@
--- project-A v0.1.0
+-- project-A v0.0.1
 -- this is a database structure for the idle adventure game
 -- stores accounts, characters, game data, and adventure progress
 
@@ -16,6 +16,7 @@ CREATE TABLE users (
     email VARCHAR(255) NOT NULL UNIQUE,
     password_hash VARCHAR(255) NOT NULL,
     login_token CHAR(64) DEFAULT NULL,
+    is_admin TINYINT NOT NULL DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) AUTO_INCREMENT = 10000;
 
@@ -97,7 +98,7 @@ CREATE TABLE items (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL UNIQUE,
     description VARCHAR(255),
-    image_path VARCHAR(255) DEFAULT NULL,
+    icon VARCHAR(100) DEFAULT NULL,
     type_id TINYINT NOT NULL,
     required_level INT NOT NULL DEFAULT 1,
 
@@ -195,7 +196,7 @@ CREATE TABLE monsters (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL UNIQUE,
     description VARCHAR(255),
-
+    sprite VARCHAR(100) DEFAULT NULL,
     level INT NOT NULL DEFAULT 1,
 
     max_hp INT NOT NULL,

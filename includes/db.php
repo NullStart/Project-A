@@ -23,7 +23,6 @@ try {
 
     // consistent timezone for offline simulation
     mysqli_query($conn, "SET time_zone = '+00:00'");
-} catch (mysqli_sql_exception $e) {
-    error_log($e->getMessage());
-    die('Database connection failed.');
+} catch (mysqli_sql_exception $e){
+    die("Database connection failed: " . $e->getMessage());
 }

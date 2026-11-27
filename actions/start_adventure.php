@@ -106,7 +106,7 @@ try {
 } catch (Throwable $e) {
     mysqli_rollback($conn);
     error_log($e->getMessage());
-    echo '<p>Unable to start adventure.</p>';
+    echo htmlspecialchars($e->getMessage());
     echo '<a href="../adventure.php?character_id=' . $character_id . '">Go Back</a>';
     exit();
 }
